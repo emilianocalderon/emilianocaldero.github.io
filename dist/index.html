@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Calculadora de Cotización</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cotización Manual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Color rosa pastel */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin: 100px auto;
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff6b98; /* Color rosa pastel más intenso */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ff6b98; /* Color rosa pastel más intenso */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cotización Manual</h1>
+        <label for="precioInput">Ingrese el precio:</label>
+        <input type="number" id="precioInput" placeholder="Ingrese el precio">
+        <button onclick="calcularPrecioFinal()">Calcular</button>
+        <p id="resultadoFinal"></p>
+    </div>
+
+    <script>
+        function calcularPrecioFinal() {
+            // Obtener el valor del precio ingresado por el usuario
+            var precio = parseFloat(document.getElementById("precioInput").value);
+
+            // Validar que se haya ingresado un valor numérico
+            if (isNaN(precio)) {
+                alert("Ingrese un valor numérico válido.");
+                return;
+            }
+
+            // Calcular resultado1
+            var resultado1 = precio + 250;
+
+            // Calcular resultado2
+            var resultado2 = resultado1 * 0.036;
+
+            // Calcular el resultado final
+            var resultado_final = resultado1 + resultado2;
+
+            // Mostrar el resultado final en el párrafo
+            document.getElementById("resultadoFinal").textContent = "Resultado final: " + resultado_final;
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
